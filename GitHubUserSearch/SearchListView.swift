@@ -14,7 +14,8 @@ struct SearchListView: View {
     
     var body: some View {
         NavigationView{
-            List {
+            List (MockData.sampleUsers){ user in
+                UserListCell(user: user)
                 
             }
             .navigationTitle("Git Hub User Search")
@@ -29,6 +30,8 @@ struct SearchListView: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .searchable(text: $searchText, prompt: "Search Users")
+        .autocapitalization(.none)
+        .disableAutocorrection(true)
         
     }
 }

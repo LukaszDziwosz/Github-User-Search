@@ -13,6 +13,7 @@
 		D087BCEC26F4B8D400E16111 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D087BCEB26F4B8D400E16111 /* Preview Assets.xcassets */; };
 		D087BCF326F4BBD200E16111 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087BCF226F4BBD200E16111 /* UserModel.swift */; };
 		D087BCF526F4E37F00E16111 /* ApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087BCF426F4E37F00E16111 /* ApiModel.swift */; };
+		D087BCF726F4E6BB00E16111 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087BCF626F4E6BB00E16111 /* UserListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		D087BCEB26F4B8D400E16111 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D087BCF226F4BBD200E16111 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		D087BCF426F4E37F00E16111 /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
+		D087BCF626F4E6BB00E16111 /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				D087BCEA26F4B8D400E16111 /* Preview Content */,
 				D087BCF226F4BBD200E16111 /* UserModel.swift */,
 				D087BCF426F4E37F00E16111 /* ApiModel.swift */,
+				D087BCF626F4E6BB00E16111 /* UserListCell.swift */,
 			);
 			path = GitHubUserSearch;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D087BCF726F4E6BB00E16111 /* UserListCell.swift in Sources */,
 				D087BCF526F4E37F00E16111 /* ApiModel.swift in Sources */,
 				D087BCE726F4B8CE00E16111 /* SearchListView.swift in Sources */,
 				D087BCF326F4BBD200E16111 /* UserModel.swift in Sources */,

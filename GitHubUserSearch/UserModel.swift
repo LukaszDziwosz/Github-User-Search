@@ -23,7 +23,7 @@ struct User: Codable, Identifiable {
 }
 
 struct MockData {
-    static let sampleUser = User(id: 1, login: "Alamofire", avatarURL: "https://avatars.githubusercontent.com/u/7774181?s=200&v=4", url: "https://github.com/Alamofire/Alamofire")
+    static let sampleUser = User(id: 001, login: "Alamofire", avatarURL: "https://avatars.githubusercontent.com/u/7774181?s=200&v=4", url: "https://github.com/Alamofire/Alamofire")
     static let sampleUsers = [sampleUser, sampleUser, sampleUser, sampleUser, sampleUser, sampleUser, sampleUser, sampleUser]
 }
 
