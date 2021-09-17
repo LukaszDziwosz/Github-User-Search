@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ApiModel: Codable {
+struct APIModel: Codable {
  
     let totalCount: Int?
     let items: [User] //try creating array on the fly

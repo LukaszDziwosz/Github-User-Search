@@ -1,5 +1,5 @@
 //
-//  ApiData.swift
+//  APIData.swift
 //  GitHubUserSearch
 //
 //  Created by Lukasz Dziwosz on 17/09/2021.

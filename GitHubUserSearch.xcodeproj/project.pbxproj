@@ -16,7 +16,7 @@
 		D087BCF726F4E6BB00E16111 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087BCF626F4E6BB00E16111 /* UserListCell.swift */; };
 		D087BCF926F4F24E00E16111 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087BCF826F4F24E00E16111 /* APIClient.swift */; };
 		D0EFA55026F51738005FBEDB /* SearchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFA54F26F51738005FBEDB /* SearchListViewModel.swift */; };
-		D0EFA55226F5229D005FBEDB /* APIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFA55126F5229D005FBEDB /* APIData.swift */; };
+		D0EFA55426F53E24005FBEDB /* APIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFA55326F53E24005FBEDB /* APIData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,7 @@
 		D087BCF626F4E6BB00E16111 /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
 		D087BCF826F4F24E00E16111 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		D0EFA54F26F51738005FBEDB /* SearchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewModel.swift; sourceTree = "<group>"; };
-		D0EFA55126F5229D005FBEDB /* APIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIData.swift; sourceTree = "<group>"; };
+		D0EFA55326F53E24005FBEDB /* APIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +72,7 @@
 				D087BCF426F4E37F00E16111 /* APIModel.swift */,
 				D087BCF626F4E6BB00E16111 /* UserListCell.swift */,
 				D087BCF826F4F24E00E16111 /* APIClient.swift */,
-				D0EFA55126F5229D005FBEDB /* APIData.swift */,
+				D0EFA55326F53E24005FBEDB /* APIData.swift */,
 			);
 			path = GitHubUserSearch;
 			sourceTree = "<group>";
@@ -159,7 +159,7 @@
 				D087BCF526F4E37F00E16111 /* APIModel.swift in Sources */,
 				D087BCE726F4B8CE00E16111 /* SearchListView.swift in Sources */,
 				D0EFA55026F51738005FBEDB /* SearchListViewModel.swift in Sources */,
-				D0EFA55226F5229D005FBEDB /* APIData.swift in Sources */,
+				D0EFA55426F53E24005FBEDB /* APIData.swift in Sources */,
 				D087BCF926F4F24E00E16111 /* APIClient.swift in Sources */,
 				D087BCF326F4BBD200E16111 /* UserModel.swift in Sources */,
 				D087BCE526F4B8CE00E16111 /* GitHubUserSearchApp.swift in Sources */,

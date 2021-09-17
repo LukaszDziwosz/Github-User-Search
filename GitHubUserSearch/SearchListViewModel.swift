@@ -16,5 +16,5 @@ class SearchListViewModel: ObservableObject {
 }
 
 extension SearchListViewModel {
-    func 
+   
 }
