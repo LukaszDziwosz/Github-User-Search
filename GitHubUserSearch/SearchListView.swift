@@ -9,13 +9,27 @@ import SwiftUI
 
 struct SearchListView: View {
     
+    @State private var searchText = ""
+    @State var isFavourite : Bool = false
     
     var body: some View {
         NavigationView{
             List {
                 
             }
+            .navigationTitle("Git Hub User Search")
+            .toolbar { Button(action: {
+                self.isFavourite.toggle()
+            }) {
+                Image(systemName: self.isFavourite == true ? "star.fill" : "star")
+                    .foregroundColor(.primary)
+                    
+            }}
+            
         }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .searchable(text: $searchText, prompt: "Search Users")
+        
     }
 }
 
