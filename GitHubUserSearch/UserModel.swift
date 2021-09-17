@@ -7,6 +7,25 @@
 
 import Foundation
 
-struct User {
-    
+
+struct User: Codable, Identifiable {
+    enum CodingKeys: String, CodingKey {
+        case id
+        case login
+        case avatarURL = "avatar_url"
+        case url
+    }
+
+    let id: Int
+    let login: String
+    let avatarURL: String
+    let url: String
 }
+
+struct MockData {
+    static let sampleUser = User(id: 1, login: "Alamofire", avatarURL: "https://avatars.githubusercontent.com/u/7774181?s=200&v=4", url: "https://github.com/Alamofire/Alamofire")
+    static let sampleUsers = [sampleUser, sampleUser, sampleUser, sampleUser, sampleUser, sampleUser, sampleUser, sampleUser]
+}
+
+
+//https://docs.github.com/en/rest/reference/search#search-users
