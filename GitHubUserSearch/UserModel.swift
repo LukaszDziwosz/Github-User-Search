@@ -9,17 +9,18 @@ import Foundation
 
 
 struct User: Codable, Identifiable {
+
+    let id: Int
+    let login: String
+    let avatarURL: String
+    let url: String
+    
     enum CodingKeys: String, CodingKey {
         case id
         case login
         case avatarURL = "avatar_url"
         case url
     }
-
-    let id: Int
-    let login: String
-    let avatarURL: String
-    let url: String
 }
 
 struct MockData {

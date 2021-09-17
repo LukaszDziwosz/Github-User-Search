@@ -7,13 +7,14 @@
 
 import Foundation
 
-struct ApiModel {
+struct ApiModel: Codable {
+ 
+    let totalCount: Int?
+    let items: [User] //try creating array on the fly
+    
     enum CodingKeys: String, CodingKey {
         case totalCount = "total_count"
         case items
     }
-
-    var totalCount: Int?
-    var items: [User] //try creating array on the fly
     
 }

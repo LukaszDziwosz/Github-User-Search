@@ -11,6 +11,7 @@ struct SearchListView: View {
     
     @State private var searchText = ""
     @State var isFavourite : Bool = false
+    @ObservedObject var viewModel = SearchListViewModel()
     
     var body: some View {
         NavigationView{
