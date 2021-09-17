@@ -8,25 +8,22 @@
 import Foundation
 import Combine
 
-final class APIClient {
-    
-      
-    struct APIClient {
+struct APIClient {
 
-        struct Response<T> { // 1
+        struct Response<T> {
             let value: T
             let response: URLResponse
         }
         
-        func run<T: Decodable>(_ request: URLRequest) -> AnyPublisher<Response<T>, Error> { // 2
+        func run<T: Decodable>(_ request: URLRequest) -> AnyPublisher<Response<T>, Error> {
             return URLSession.shared
-                .dataTaskPublisher(for: request) // 3
+                .dataTaskPublisher(for: request) 
                 .tryMap { result -> Response<T> in
-                    let value = try JSONDecoder().decode(T.self, from: result.data) // 4
-                    return Response(value: value, response: result.response) // 5
+                    let value = try JSONDecoder().decode(T.self, from: result.data)
+                    return Response(value: value, response: result.response)
                 }
-                .receive(on: DispatchQueue.main) // 6
-                .eraseToAnyPublisher() // 7
+                .receive(on: DispatchQueue.main) //Runloop.main
+                .eraseToAnyPublisher()
         }
     }
-}
+

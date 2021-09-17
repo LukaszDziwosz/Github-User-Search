@@ -14,3 +14,7 @@ class SearchListViewModel: ObservableObject {
     var cancellables: AnyCancellable?
     
 }
+
+extension SearchListViewModel {
+    func 
+}
