@@ -50,7 +50,7 @@ extension SearchListViewModel {
                       .sink(receiveCompletion: { _ in },
                             receiveValue: {
                           print($0)
-                        //  self.users = $0
+                          self.users = $0.items
                       })
        }
  

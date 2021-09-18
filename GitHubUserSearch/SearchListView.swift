@@ -13,7 +13,7 @@ struct SearchListView: View {
     
     var body: some View {
         NavigationView{
-            List (MockData.sampleUsers){ user in
+            List (viewModel.users, id: \.id) { user in
                 UserListCell(user: user)
                 
             }

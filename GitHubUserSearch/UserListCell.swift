@@ -20,11 +20,11 @@ struct UserListCell: View {
                 .cornerRadius(10)
             
             VStack(alignment: .leading, spacing: 10){
-                Text(MockData.sampleUser.login)
+                Text(user.login)
                     .font(.title2)
                     .fontWeight(.medium)
                 
-                Text(MockData.sampleUser.url)
+                Text(user.url)
                     .font(.caption)
                     .foregroundColor(.secondary)
                     .fontWeight(.semibold)
