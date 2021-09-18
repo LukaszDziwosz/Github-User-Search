@@ -9,8 +9,6 @@ import SwiftUI
 
 struct SearchListView: View {
     
-    @State private var searchText = ""
-    @State var isFavourite : Bool = false
     @ObservedObject var viewModel = SearchListViewModel()
     
     var body: some View {
@@ -21,16 +19,16 @@ struct SearchListView: View {
             }
             .navigationTitle("Git Hub User Search")
             .toolbar { Button(action: {
-                self.isFavourite.toggle()
+                viewModel.isFavourite.toggle()
             }) {
-                Image(systemName: self.isFavourite == true ? "star.fill" : "star")
+                Image(systemName: viewModel.isFavourite == true ? "star.fill" : "star")
                     .foregroundColor(.primary)
                     
             }}
             
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .searchable(text: $searchText, prompt: "Search Users")
+        .searchable(text: $viewModel.searchQuery, prompt: "Search Users")
         .autocapitalization(.none)
         .disableAutocorrection(true)
         
