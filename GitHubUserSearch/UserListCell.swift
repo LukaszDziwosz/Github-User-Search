@@ -10,11 +10,15 @@ import SwiftUI
 struct UserListCell: View {
     
     let user: User
-    
+
     var body: some View {
         HStack{
-            Image("alamopic")
-                .resizable()
+            
+            AsyncImage(
+                url: URL(string: user.avatarURL ?? "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")!,
+               placeholder: { Text("Loading ...") },
+               image: { Image(uiImage: $0)
+                   .resizable()})
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100, height: 100)
                 .cornerRadius(10)
