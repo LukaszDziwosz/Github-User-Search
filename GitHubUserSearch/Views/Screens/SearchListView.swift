@@ -13,18 +13,8 @@ struct SearchListView: View {
     
     var body: some View {
         NavigationView {
-            Group {
-                if viewModel.isLoading {
-                    LoadingView()
-                }else if viewModel.errorMessage != "" {
-                    ErrorView(message: viewModel.errorMessage)
-                }else if viewModel.users.count > 0 {
-                    listView()
-                }else if viewModel.searchQuery == "" {
-                    ErrorView(message: "Try searching for Github users, using search bar. 🔎")
-                }else {
-                    LoadingView()
-                }
+            VStack {
+             mainView()
            
             }
             .navigationTitle("Git Hub User Search")
@@ -55,6 +45,23 @@ struct SearchListView: View {
             }else{
                 viewModel.users.removeAll()
             }})
+    }
+    
+    func mainView() -> some View {
+        Group {
+            if viewModel.isLoading {
+                LoadingView()
+            }else if viewModel.errorMessage != "" {
+                ErrorView(message: viewModel.errorMessage)
+            }else if viewModel.users.count > 0 {
+                listView()
+            }else if viewModel.searchQuery == "" {
+                ErrorView(message: "Try searching for Github users, using search bar. 🔎")
+            }else {
+                LoadingView()
+            }
+       
+        }
     }
 }
 

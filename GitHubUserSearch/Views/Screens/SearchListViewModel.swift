@@ -22,9 +22,7 @@ class SearchListViewModel: ObservableObject {
     init() {
        delayAndPass()
     }
-    
-
-    
+        
 }
 
 extension SearchListViewModel {
@@ -51,6 +49,8 @@ extension SearchListViewModel {
                       .sink(receiveCompletion: { _ in },
                             receiveValue: {
                           self.users = $0.items
+                          self.isLoading = false
+                          print("\(String(describing: $0.totalCount))")
                       })
        }
  
