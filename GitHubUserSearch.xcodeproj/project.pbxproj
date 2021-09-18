@@ -71,20 +71,13 @@
 		D087BCE326F4B8CE00E16111 /* GitHubUserSearch */ = {
 			isa = PBXGroup;
 			children = (
+				D0EFA56126F69508005FBEDB /* Utilities */,
+				D0EFA56026F69450005FBEDB /* Networking */,
+				D0EFA55E26F69385005FBEDB /* Views */,
+				D0EFA55D26F6934F005FBEDB /* Model */,
 				D087BCE426F4B8CE00E16111 /* GitHubUserSearchApp.swift */,
-				D087BCE626F4B8CE00E16111 /* SearchListView.swift */,
-				D0EFA54F26F51738005FBEDB /* SearchListViewModel.swift */,
 				D087BCE826F4B8D400E16111 /* Assets.xcassets */,
 				D087BCEA26F4B8D400E16111 /* Preview Content */,
-				D087BCF226F4BBD200E16111 /* UserModel.swift */,
-				D087BCF426F4E37F00E16111 /* APIModel.swift */,
-				D087BCF626F4E6BB00E16111 /* UserListCell.swift */,
-				D087BCF826F4F24E00E16111 /* APIClient.swift */,
-				D0EFA55326F53E24005FBEDB /* APIData.swift */,
-				D0EFA55526F67906005FBEDB /* ImageLoader.swift */,
-				D0EFA55726F679EB005FBEDB /* AsyncImage.swift */,
-				D0EFA55926F68CB2005FBEDB /* ImageCache.swift */,
-				D0EFA55B26F68D7E005FBEDB /* ImageUtil.swift */,
 			);
 			path = GitHubUserSearch;
 			sourceTree = "<group>";
@@ -95,6 +88,61 @@
 				D087BCEB26F4B8D400E16111 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D0EFA55D26F6934F005FBEDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D087BCF426F4E37F00E16111 /* APIModel.swift */,
+				D087BCF226F4BBD200E16111 /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0EFA55E26F69385005FBEDB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0EFA55F26F693BF005FBEDB /* Screens */,
+				D087BCF626F4E6BB00E16111 /* UserListCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D0EFA55F26F693BF005FBEDB /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D0EFA54F26F51738005FBEDB /* SearchListViewModel.swift */,
+				D087BCE626F4B8CE00E16111 /* SearchListView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		D0EFA56026F69450005FBEDB /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D0EFA55526F67906005FBEDB /* ImageLoader.swift */,
+				D0EFA55326F53E24005FBEDB /* APIData.swift */,
+				D087BCF826F4F24E00E16111 /* APIClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D0EFA56126F69508005FBEDB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D0EFA56226F6951C005FBEDB /* ImageHelpers */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D0EFA56226F6951C005FBEDB /* ImageHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				D0EFA55926F68CB2005FBEDB /* ImageCache.swift */,
+				D0EFA55B26F68D7E005FBEDB /* ImageUtil.swift */,
+				D0EFA55726F679EB005FBEDB /* AsyncImage.swift */,
+			);
+			path = ImageHelpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
