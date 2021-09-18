@@ -21,6 +21,8 @@
 		D0EFA55826F679EB005FBEDB /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFA55726F679EB005FBEDB /* AsyncImage.swift */; };
 		D0EFA55A26F68CB2005FBEDB /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFA55926F68CB2005FBEDB /* ImageCache.swift */; };
 		D0EFA55C26F68D7E005FBEDB /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFA55B26F68D7E005FBEDB /* ImageUtil.swift */; };
+		D0EFA56426F6970B005FBEDB /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFA56326F6970B005FBEDB /* LoadingView.swift */; };
+		D0EFA56626F69DCB005FBEDB /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFA56526F69DCB005FBEDB /* ErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		D0EFA55726F679EB005FBEDB /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		D0EFA55926F68CB2005FBEDB /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		D0EFA55B26F68D7E005FBEDB /* ImageUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
+		D0EFA56326F6970B005FBEDB /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		D0EFA56526F69DCB005FBEDB /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 			children = (
 				D0EFA55F26F693BF005FBEDB /* Screens */,
 				D087BCF626F4E6BB00E16111 /* UserListCell.swift */,
+				D0EFA56326F6970B005FBEDB /* LoadingView.swift */,
+				D0EFA56526F69DCB005FBEDB /* ErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,6 +232,8 @@
 				D0EFA55626F67906005FBEDB /* ImageLoader.swift in Sources */,
 				D087BCF926F4F24E00E16111 /* APIClient.swift in Sources */,
 				D087BCF326F4BBD200E16111 /* UserModel.swift in Sources */,
+				D0EFA56626F69DCB005FBEDB /* ErrorView.swift in Sources */,
+				D0EFA56426F6970B005FBEDB /* LoadingView.swift in Sources */,
 				D087BCE526F4B8CE00E16111 /* GitHubUserSearchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

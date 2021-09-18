@@ -13,7 +13,8 @@ class SearchListViewModel: ObservableObject {
     @Published var users: [User] = []
     @Published var searchQuery = ""
     @Published var isLoading = false
-    @Published var isFavourite : Bool = false
+    @Published var showFavourite : Bool = false
+    @Published var errorMessage = ""
     
     private var cancellables: AnyCancellable?
     private var disposables: Set<AnyCancellable> = []
@@ -44,12 +45,11 @@ extension SearchListViewModel {
     private func getUsers(querry: String) {
         cancellables = APIData.usersRequest(.searchUsers, username: querry)
             .mapError({ (error) -> Error in
-                print(error.localizedDescription)
+                self.errorMessage = error.localizedDescription
                           return error
                       })
                       .sink(receiveCompletion: { _ in },
                             receiveValue: {
-                          print($0)
                           self.users = $0.items
                       })
        }
