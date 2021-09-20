@@ -22,11 +22,11 @@ enum APIEndpoint: String {
 //https://docs.github.com/en/rest/reference/search#search-users
 extension APIData {
     
-    static func usersRequest(_ path: APIEndpoint, username: String) -> AnyPublisher<APIModel, Error> {
+    static func usersRequest(_ path: APIEndpoint, username: String, page: Int) -> AnyPublisher<APIModel, Error> {
         
         guard var components = URLComponents(url: baseUrl.appendingPathComponent(path.rawValue), resolvingAgainstBaseURL: true)
         else { fatalError("Couldn't create URLComponents") }
-        components.queryItems = [URLQueryItem(name: "q", value: username)]
+        components.queryItems = [URLQueryItem(name: "q", value: username), URLQueryItem(name: "page", value: "\(page)")]
 
         var request = URLRequest(url: components.url!)
         request.httpMethod = "GET"

@@ -16,6 +16,10 @@ class SearchListViewModel: ObservableObject {
     @Published var showFavourite : Bool = false
     @Published var errorMessage = ""
     @Published var isShowingDetailView = false
+    @Published var totalCount = 0
+    @Published var currentpage = 1
+    @Published var isMorePossible = true
+    
     private var cancellables: AnyCancellable?
     private var disposables: Set<AnyCancellable> = []
     
@@ -37,6 +41,10 @@ extension SearchListViewModel {
                  .debounce(for: .milliseconds(750), scheduler: RunLoop.main)
                  .sink { [weak self] (searchQuery) in
                      if searchQuery != "" {
+                         self?.users.removeAll()
+                         self?.isLoading = true
+                         self?.currentpage = 1
+                         self?.isMorePossible = true
                          self?.getUsers(querry: searchQuery)}
                  }
                  .store(in: &disposables)
@@ -44,17 +52,21 @@ extension SearchListViewModel {
     
     
     
-    private func getUsers(querry: String) {
-        cancellables = APIData.usersRequest(.searchUsers, username: querry)
+     func getUsers(querry: String) {
+         cancellables = APIData.usersRequest(.searchUsers, username: querry, page: currentpage)
             .mapError({ (error) -> Error in
+                self.isLoading = false
                 self.errorMessage = error.localizedDescription
                           return error
                       })
                       .sink(receiveCompletion: { _ in },
                             receiveValue: {
-                          self.users = $0.items
+                          self.totalCount = $0.totalCount ?? 0
+                          self.users += $0.items
+                          self.users.removeDuplicates()
+                          self.isMorePossible = self.users.count < self.totalCount && self.users.count < 150
                           self.isLoading = false
-                          print("\(String(describing: $0.totalCount))")
+                          self.errorMessage = ""
                       })
        }
  
