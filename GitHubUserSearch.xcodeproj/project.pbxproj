@@ -15,6 +15,9 @@
 		D087BCF526F4E37F00E16111 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087BCF426F4E37F00E16111 /* APIModel.swift */; };
 		D087BCF726F4E6BB00E16111 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087BCF626F4E6BB00E16111 /* UserListCell.swift */; };
 		D087BCF926F4F24E00E16111 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087BCF826F4F24E00E16111 /* APIClient.swift */; };
+		D0AFEBF826F8F6750091FF8E /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFEBF726F8F6750091FF8E /* UserDetailView.swift */; };
+		D0AFEBFA26F8F6B00091FF8E /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFEBF926F8F6B00091FF8E /* XDismissButton.swift */; };
+		D0AFEBFC26F8F7870091FF8E /* UserButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFEBFB26F8F7870091FF8E /* UserButton.swift */; };
 		D0EFA55026F51738005FBEDB /* SearchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFA54F26F51738005FBEDB /* SearchListViewModel.swift */; };
 		D0EFA55426F53E24005FBEDB /* APIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFA55326F53E24005FBEDB /* APIData.swift */; };
 		D0EFA55626F67906005FBEDB /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFA55526F67906005FBEDB /* ImageLoader.swift */; };
@@ -35,6 +38,9 @@
 		D087BCF426F4E37F00E16111 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		D087BCF626F4E6BB00E16111 /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
 		D087BCF826F4F24E00E16111 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		D0AFEBF726F8F6750091FF8E /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		D0AFEBF926F8F6B00091FF8E /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
+		D0AFEBFB26F8F7870091FF8E /* UserButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserButton.swift; sourceTree = "<group>"; };
 		D0EFA54F26F51738005FBEDB /* SearchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewModel.swift; sourceTree = "<group>"; };
 		D0EFA55326F53E24005FBEDB /* APIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIData.swift; sourceTree = "<group>"; };
 		D0EFA55526F67906005FBEDB /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
@@ -110,6 +116,8 @@
 				D087BCF626F4E6BB00E16111 /* UserListCell.swift */,
 				D0EFA56326F6970B005FBEDB /* LoadingView.swift */,
 				D0EFA56526F69DCB005FBEDB /* ErrorView.swift */,
+				D0AFEBF926F8F6B00091FF8E /* XDismissButton.swift */,
+				D0AFEBFB26F8F7870091FF8E /* UserButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -119,6 +127,7 @@
 			children = (
 				D0EFA54F26F51738005FBEDB /* SearchListViewModel.swift */,
 				D087BCE626F4B8CE00E16111 /* SearchListView.swift */,
+				D0AFEBF726F8F6750091FF8E /* UserDetailView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -224,6 +233,7 @@
 				D0EFA55A26F68CB2005FBEDB /* ImageCache.swift in Sources */,
 				D087BCF726F4E6BB00E16111 /* UserListCell.swift in Sources */,
 				D087BCF526F4E37F00E16111 /* APIModel.swift in Sources */,
+				D0AFEBFC26F8F7870091FF8E /* UserButton.swift in Sources */,
 				D0EFA55C26F68D7E005FBEDB /* ImageUtil.swift in Sources */,
 				D087BCE726F4B8CE00E16111 /* SearchListView.swift in Sources */,
 				D0EFA55826F679EB005FBEDB /* AsyncImage.swift in Sources */,
@@ -233,7 +243,9 @@
 				D087BCF926F4F24E00E16111 /* APIClient.swift in Sources */,
 				D087BCF326F4BBD200E16111 /* UserModel.swift in Sources */,
 				D0EFA56626F69DCB005FBEDB /* ErrorView.swift in Sources */,
+				D0AFEBFA26F8F6B00091FF8E /* XDismissButton.swift in Sources */,
 				D0EFA56426F6970B005FBEDB /* LoadingView.swift in Sources */,
+				D0AFEBF826F8F6750091FF8E /* UserDetailView.swift in Sources */,
 				D087BCE526F4B8CE00E16111 /* GitHubUserSearchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

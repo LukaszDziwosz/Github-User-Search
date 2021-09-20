@@ -15,9 +15,13 @@ class SearchListViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var showFavourite : Bool = false
     @Published var errorMessage = ""
-    
+    @Published var isShowingDetailView = false
     private var cancellables: AnyCancellable?
     private var disposables: Set<AnyCancellable> = []
+    
+    var selectedUser: User? {
+        didSet{ isShowingDetailView = true }
+    }
     
     init() {
        delayAndPass()

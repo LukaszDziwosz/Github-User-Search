@@ -24,6 +24,9 @@ struct SearchListView: View {
                 Image(systemName: viewModel.showFavourite == true ? "star.fill" : "star")
                     .foregroundColor(.primary)
             }}
+            .sheet(isPresented: $viewModel.isShowingDetailView) {
+                UserDetailView(user: viewModel.selectedUser ?? MockData.sampleUser, isShowingDetailView: $viewModel.isShowingDetailView)
+            }
             
         }
         .navigationViewStyle(StackNavigationViewStyle())
@@ -38,13 +41,11 @@ struct SearchListView: View {
     func listView() -> some View {
         List (viewModel.users, id: \.id) { user in
             UserListCell(user: user)
+                .onTapGesture {
+                    viewModel.selectedUser = user
         }
-        .onChange(of: viewModel.searchQuery, perform: { value in
-            if !value .isEmpty && value.count > 0 {
-                viewModel.isLoading = true
-            }else{
-                viewModel.users.removeAll()
-            }})
+       
+        }
     }
     
     func mainView() -> some View {
