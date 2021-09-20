@@ -11,6 +11,7 @@ import Combine
 class SearchListViewModel: ObservableObject {
     
     @Published var users: [User] = []
+    @Published var repos: [Repos] = []
     @Published var searchQuery = ""
     @Published var isLoading = false
     @Published var showFavourite : Bool = false
@@ -69,5 +70,18 @@ extension SearchListViewModel {
                           self.errorMessage = ""
                       })
        }
+    
+    func getRepos(repoURL: String) {
+        cancellables = APIData.repoRequest(urlString: repoURL)
+            .mapError({ (error) -> Error in
+                self.errorMessage = error.localizedDescription
+                          return error
+                      })
+            .sink(receiveCompletion: { _ in },
+                  receiveValue: {
+                print($0)
+                
+            })
+    }
  
 }

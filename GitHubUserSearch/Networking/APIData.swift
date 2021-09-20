@@ -36,4 +36,11 @@ extension APIData {
              .map(\.value)
              .eraseToAnyPublisher()
      }
+    static func repoRequest(urlString: String) -> AnyPublisher<[Repos], Error> {
+        guard let url = URL(string: urlString) else { fatalError("Bad repository URL") }
+        let request = URLRequest(url: url)
+        return apiClient.run(request)
+            .map(\.value)
+            .eraseToAnyPublisher()
+    }
 }

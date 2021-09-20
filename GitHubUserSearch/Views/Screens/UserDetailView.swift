@@ -9,25 +9,33 @@ import SwiftUI
 
 struct UserDetailView: View {
     var user: User
-    @Binding var isShowingDetailView: Bool
-   
     
+    @Binding var isShowingDetailView: Bool
+       
     var body: some View {
         VStack{
-            XDismissButton(isShowingDetailView: $isShowingDetailView)
+            HStack {
+                Spacer()
+                
+                Button{
+                    isShowingDetailView.toggle()
+                }label: {
+                    XButton(frameXY: 44)
+            }
+            }
+          
             Spacer()
             UserListCell(user: user)
             ScrollView {
-                Text(user.login)
+                Text(user.reposURL)
                     .font(.body)
                 .padding()
             }
             Spacer()
-            Button{
-//                isShowingSafariView = true
-              } label: {
+            Link(destination: URL(string: user.htmlURL)!, label: {
                 UserButton(title: "Learn More")
-            }
+            })
+ 
         }
 
     }

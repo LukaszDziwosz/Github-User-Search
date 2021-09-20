@@ -10,21 +10,23 @@ import Foundation
 
 struct User: Codable, Identifiable,Equatable, Hashable {
 
-    let id: Int
+    let id = UUID()
     let login: String
     let avatarURL: String?
-    let url: String
+    let htmlURL: String
+    let reposURL: String
     
     enum CodingKeys: String, CodingKey {
         case id
         case login
         case avatarURL = "avatar_url"
-        case url
+        case htmlURL = "html_url"
+        case reposURL = "repos_url"
     }
 }
 
 struct MockData {
-    static let sampleUser = User(id: 001, login: "Alamofire", avatarURL: "https://avatars.githubusercontent.com/u/7774181?s=200&v=4", url: "https://github.com/Alamofire/Alamofire")
+    static let sampleUser = User(login: "Alamofire", avatarURL: "https://avatars.githubusercontent.com/u/7774181?s=200&v=4", htmlURL: "https://github.com/Alamofire/Alamofire", reposURL: "https://api.github.com/users/mojombo/repos")
     static let sampleUsers = [sampleUser, sampleUser, sampleUser, sampleUser, sampleUser, sampleUser, sampleUser, sampleUser]
 }
 

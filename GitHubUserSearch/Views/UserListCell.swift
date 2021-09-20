@@ -28,7 +28,7 @@ struct UserListCell: View {
                     .font(.title2)
                     .fontWeight(.medium)
                 
-                Text(user.url)
+                Text(user.htmlURL)
                     .font(.caption)
                     .foregroundColor(.secondary)
                     .fontWeight(.semibold)
@@ -37,11 +37,6 @@ struct UserListCell: View {
             }
             .padding(.leading)
             
-            Spacer()
-            
-            Image(systemName: "chevron.right")
-                .font(.title)
-                .padding(.trailing, 10)
         }
     }
 }

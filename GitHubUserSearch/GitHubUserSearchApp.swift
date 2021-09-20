@@ -11,7 +11,7 @@ import SwiftUI
 struct GitHubUserSearchApp: App {
     var body: some Scene {
         WindowGroup {
-            SearchListView()
+            SearchListView(user: MockData.sampleUser)
         }
     }
 }

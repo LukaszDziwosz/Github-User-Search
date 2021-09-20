@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SearchListView: View {
     
+    var user: User
+    
     @ObservedObject var viewModel = SearchListViewModel()
     
     var body: some View {
@@ -54,7 +56,7 @@ struct SearchListView: View {
                 viewModel.currentpage = 1
                 viewModel.users.removeAll()
             }) {
-                Image(systemName: "xmark")
+                XButton(frameXY: 10)
                     .foregroundColor(.primary)
                     .opacity(viewModel.searchQuery == "" ? 0 : 0.9)
             }
@@ -77,7 +79,9 @@ struct SearchListView: View {
          ForEach(viewModel.users, id: \.id) { user in
             UserListCell(user: user)
                 .onTapGesture {
-                    viewModel.selectedUser = user }
+                    viewModel.selectedUser = user
+                    viewModel.getRepos(repoURL: user.reposURL)
+                }
                 }
             if self.viewModel.isMorePossible {
                 Text(viewModel.users.count < 120 ? "Fetching more..." : "Please narrow the search")
@@ -110,6 +114,6 @@ struct SearchListView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchListView()
+        SearchListView(user: MockData.sampleUser)
     }
 }
