@@ -10,6 +10,12 @@ import SwiftUI
 struct SearchListView: View {
     
     var user: User
+    @FetchRequest(
+       entity: SavedUser.entity(),
+       sortDescriptors: [
+         NSSortDescriptor(keyPath: \SavedUser.id, ascending: true)
+       ]
+     ) var savedUsers: FetchedResults<SavedUser>
     
     @ObservedObject var viewModel = SearchListViewModel()
     
@@ -96,7 +102,7 @@ struct SearchListView: View {
     
     func savedListView() -> some View {
         List{
-            ForEach(viewModel.savedUsers, id: \.id) { user in
+            ForEach(savedUsers, id: \.id) { user in
                FavouriteCell(savedUser: user)
                 
                    }

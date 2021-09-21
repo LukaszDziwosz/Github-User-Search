@@ -12,12 +12,36 @@ struct UserDetailView: View {
     
     @Binding var isShowingDetailView: Bool
     @Binding var repos: [Repos]
-       
+    @Environment(\.managedObjectContext) var viewContext
+
+    
+    
+    func saveContext() {
+      do {
+        try viewContext.save()
+      } catch {
+        print("Error saving managed object context: \(error)")
+      }
+    }
+    func addFavourite(id: UUID,login:String, avatarURL: String, htmlURL: String, reposURL: String) {
+      
+        let newUser = SavedUser(context: viewContext)
+
+      newUser.id = id
+      newUser.login = login
+      newUser.avatarURL = avatarURL
+      newUser.htmlURL = htmlURL
+      newUser.reposURL = reposURL
+
+        saveContext()
+    }
+
+    
     var body: some View {
         VStack{
             HStack {
                 Button(action: {
-    //                viewModel.showFavourite.toggle()
+                self.addFavourite(id: user.id, login: user.login, avatarURL: user.avatarURL ?? "", htmlURL: user.htmlURL, reposURL: user.login)
                 }) {
                     Image(systemName: "star")
                         .foregroundColor(.primary)

@@ -29,21 +29,18 @@ class SearchListViewModel: ObservableObject {
     var selectedUser: User? {
         didSet{ isShowingDetailView = true }
     }
-    @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(
-       // 2.
        entity: SavedUser.entity(),
-       // 3.
        sortDescriptors: [
          NSSortDescriptor(keyPath: \SavedUser.id, ascending: true)
        ]
-       //,predicate: NSPredicate(format: "genre contains 'Action'")
-       // 4.
      ) var savedUsers: FetchedResults<SavedUser>
     
     init() {
        delayAndPass()
     }
+    
+ 
         
 }
 
@@ -96,19 +93,6 @@ extension SearchListViewModel {
                 
             })
     }
-    func addMovie(id: UUID,login:String, avatarURL: String, htmlURL: String, reposURL: String) {
-      // 1
-        let newUser = SavedUser(context: PersistenceController.shared.container.viewContext)
 
-      // 2
-      newUser.id = id
-      newUser.login = login
-      newUser.avatarURL = avatarURL
-      newUser.htmlURL = htmlURL
-      newUser.reposURL = reposURL
-
-      // 3
-     PersistenceController.shared.save()
-    }
 
 }
