@@ -11,6 +11,7 @@ import Combine
 class SearchListViewModel: ObservableObject {
     
     @Published var users: [User] = []
+    @Published var savedUsers:[SavedUser] = []
     @Published var repos: [Repos] = []
     @Published var searchQuery = ""
     @Published var isLoading = false
