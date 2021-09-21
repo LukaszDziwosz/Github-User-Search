@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Repos: Codable {
+struct Repos: Codable, Identifiable {
     
     let id = UUID()
     let name: String

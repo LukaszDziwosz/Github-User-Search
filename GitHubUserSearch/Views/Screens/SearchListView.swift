@@ -28,7 +28,7 @@ struct SearchListView: View {
             .navigationBarTitle (Text(viewModel.searchQuery.isEmpty ? "💻 GitHub User Search" : "Found \(viewModel.totalCount) results"),
                                  displayMode: .inline)
             .sheet(isPresented: $viewModel.isShowingDetailView) {
-                UserDetailView(user: viewModel.selectedUser ?? MockData.sampleUser, isShowingDetailView: $viewModel.isShowingDetailView)
+                UserDetailView(user: viewModel.selectedUser ?? MockData.sampleUser, isShowingDetailView: $viewModel.isShowingDetailView, repos: $viewModel.repos)
             }
             
         }

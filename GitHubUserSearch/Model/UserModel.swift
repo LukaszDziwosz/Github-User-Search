@@ -28,6 +28,9 @@ struct User: Codable, Identifiable,Equatable, Hashable {
 struct MockData {
     static let sampleUser = User(login: "Alamofire", avatarURL: "https://avatars.githubusercontent.com/u/7774181?s=200&v=4", htmlURL: "https://github.com/Alamofire/Alamofire", reposURL: "https://api.github.com/users/mojombo/repos")
     static let sampleUsers = [sampleUser, sampleUser, sampleUser, sampleUser, sampleUser, sampleUser, sampleUser, sampleUser]
+    
+    static let sampleRepo = Repos(name: "Alamofire", stars: 10, watchers: 20, language: "Swift")
+    static let sampleRepos = [sampleRepo, sampleRepo, sampleRepo, sampleRepo, sampleRepo]
 }
 
 

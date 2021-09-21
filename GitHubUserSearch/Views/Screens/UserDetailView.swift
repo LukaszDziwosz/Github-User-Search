@@ -11,6 +11,7 @@ struct UserDetailView: View {
     var user: User
     
     @Binding var isShowingDetailView: Bool
+    @Binding var repos: [Repos]
        
     var body: some View {
         VStack{
@@ -26,10 +27,11 @@ struct UserDetailView: View {
           
             Spacer()
             UserListCell(user: user)
-            ScrollView {
-                Text(user.reposURL)
-                    .font(.body)
-                .padding()
+            List{
+                ForEach (repos, id: \.id) { repo in
+                    RepoListCell(repo: repo)
+                    
+                }
             }
             Spacer()
             Link(destination: URL(string: user.htmlURL)!, label: {
@@ -43,6 +45,6 @@ struct UserDetailView: View {
 
 struct UserDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        UserDetailView(user: MockData.sampleUser, isShowingDetailView: .constant(false))
+        UserDetailView(user: MockData.sampleUser, isShowingDetailView: .constant(false), repos: .constant(MockData.sampleRepos))
     }
 }

@@ -79,7 +79,7 @@ extension SearchListViewModel {
                       })
             .sink(receiveCompletion: { _ in },
                   receiveValue: {
-                print($0)
+                self.repos = $0
                 
             })
     }
