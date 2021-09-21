@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchListView: View {
     
     var user: User
+    @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(
        entity: SavedUser.entity(),
        sortDescriptors: [
@@ -104,8 +105,8 @@ struct SearchListView: View {
         List{
             ForEach(savedUsers, id: \.id) { user in
                FavouriteCell(savedUser: user)
-                
-                   }
+                }
+            .onDelete(perform: deleteFavourite)
         }
         
     }
@@ -134,6 +135,27 @@ struct SearchListView: View {
             }
        
         }
+    }
+    
+    func deleteFavourite(at offsets: IndexSet) {
+      // 1.
+      offsets.forEach { index in
+        // 2.
+        let user = self.savedUsers[index]
+
+        // 3.
+        self.viewContext.delete(user)
+      }
+
+      // 4.
+      saveContext()
+    }
+    func saveContext() {
+      do {
+        try viewContext.save()
+      } catch {
+        print("Error saving managed object context: \(error)")
+      }
     }
 }
 
