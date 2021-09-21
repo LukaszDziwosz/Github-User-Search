@@ -7,27 +7,39 @@
 
 import Foundation
 import Combine
+import SwiftUI
+
 
 class SearchListViewModel: ObservableObject {
     
     @Published var users: [User] = []
-    @Published var savedUsers:[SavedUser] = []
+//    @Published var savedUsers:[SavedUser] = []
     @Published var repos: [Repos] = []
     @Published var searchQuery = ""
     @Published var isLoading = false
-    @Published var showFavourite : Bool = false
+    @Published var showFavourite: Bool = false
     @Published var errorMessage = ""
     @Published var isShowingDetailView = false
     @Published var totalCount = 0
     @Published var currentpage = 1
     @Published var isMorePossible = true
-    
     private var cancellables: AnyCancellable?
     private var disposables: Set<AnyCancellable> = []
     
     var selectedUser: User? {
         didSet{ isShowingDetailView = true }
     }
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(
+       // 2.
+       entity: SavedUser.entity(),
+       // 3.
+       sortDescriptors: [
+         NSSortDescriptor(keyPath: \SavedUser.id, ascending: true)
+       ]
+       //,predicate: NSPredicate(format: "genre contains 'Action'")
+       // 4.
+     ) var savedUsers: FetchedResults<SavedUser>
     
     init() {
        delayAndPass()
@@ -84,5 +96,19 @@ extension SearchListViewModel {
                 
             })
     }
- 
+    func addMovie(id: UUID,login:String, avatarURL: String, htmlURL: String, reposURL: String) {
+      // 1
+        let newUser = SavedUser(context: PersistenceController.shared.container.viewContext)
+
+      // 2
+      newUser.id = id
+      newUser.login = login
+      newUser.avatarURL = avatarURL
+      newUser.htmlURL = htmlURL
+      newUser.reposURL = reposURL
+
+      // 3
+     PersistenceController.shared.save()
+    }
+
 }

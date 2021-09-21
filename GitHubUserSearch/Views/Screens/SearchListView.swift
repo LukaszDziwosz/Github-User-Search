@@ -94,6 +94,25 @@ struct SearchListView: View {
         
     }
     
+    func savedListView() -> some View {
+        List{
+            ForEach(viewModel.savedUsers, id: \.id) { user in
+               FavouriteCell(savedUser: user)
+                
+                   }
+        }
+        
+    }
+    func chosenList() -> some View {
+        Group{
+            if viewModel.showFavourite {
+                savedListView()
+            }else{
+                listView()
+            }
+        }
+    }
+    
     func mainView() -> some View {
         Group {
             if viewModel.isLoading {
@@ -101,7 +120,7 @@ struct SearchListView: View {
             }else if viewModel.errorMessage != "" {
                 ErrorView(message: viewModel.errorMessage)
             }else if viewModel.users.count > 0 {
-                listView()
+                chosenList()
             }else if viewModel.searchQuery == "" {
                 ErrorView(message: "Try searching for Github users, using search bar. 🔎")
             }else {

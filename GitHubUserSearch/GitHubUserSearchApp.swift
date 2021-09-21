@@ -13,7 +13,7 @@ struct GitHubUserSearchApp: App {
     
     let persistenceController = PersistenceController.shared
     @Environment(\.scenePhase) var scenePhase
-    
+
     var body: some Scene {
         WindowGroup {
             SearchListView(user: MockData.sampleUser)

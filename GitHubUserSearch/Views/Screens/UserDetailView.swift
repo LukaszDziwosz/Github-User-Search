@@ -16,6 +16,15 @@ struct UserDetailView: View {
     var body: some View {
         VStack{
             HStack {
+                Button(action: {
+    //                viewModel.showFavourite.toggle()
+                }) {
+                    Image(systemName: "star")
+                        .foregroundColor(.primary)
+                }
+                .frame(width: 20, height: 20)
+                .padding(.leading)
+                
                 Spacer()
                 
                 Button{
