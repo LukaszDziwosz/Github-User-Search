@@ -12,6 +12,7 @@ struct UserDetailView: View {
     
     @Binding var isShowingDetailView: Bool
     @Binding var repos: [Repos]
+    @State private var isButtonHidden = false
     @Environment(\.managedObjectContext) var viewContext
 
     
@@ -40,15 +41,14 @@ struct UserDetailView: View {
     var body: some View {
         VStack{
             HStack {
-                Button(action: {
-                self.addFavourite(id: user.id, login: user.login, avatarURL: user.avatarURL ?? "", htmlURL: user.htmlURL, reposURL: user.login)
-                }) {
-                    Image(systemName: "star")
-                        .foregroundColor(.primary)
-                }
-                .frame(width: 20, height: 20)
-                .padding(.leading)
-                
+                Button("⭐️ Add to favs"){
+                    self.addFavourite(id: user.id, login: user.login, avatarURL: user.avatarURL ?? "", htmlURL: user.htmlURL, reposURL: user.login)
+                    self.isButtonHidden = true
+                            }
+                            .foregroundColor(.primary)
+                            .opacity(isButtonHidden ? 0 : 1)
+                            .animation(.easeInOut(duration: 2), value: 2)
+                            .padding(.leading)
                 Spacer()
                 
                 Button{

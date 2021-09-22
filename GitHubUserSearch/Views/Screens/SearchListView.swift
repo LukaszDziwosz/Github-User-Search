@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchListView: View {
     
     var user: User
+    
     @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(
        entity: SavedUser.entity(),
@@ -32,7 +33,7 @@ struct SearchListView: View {
              Spacer()
            
             }
-            .navigationBarTitle (Text(viewModel.searchQuery.isEmpty ? "💻 GitHub User Search" : "Found \(viewModel.totalCount) results"),
+            .navigationBarTitle (Text(viewModel.navBarText()),
                                  displayMode: .inline)
             .sheet(isPresented: $viewModel.isShowingDetailView) {
                 UserDetailView(user: viewModel.selectedUser ?? MockData.sampleUser, isShowingDetailView: $viewModel.isShowingDetailView, repos: $viewModel.repos)

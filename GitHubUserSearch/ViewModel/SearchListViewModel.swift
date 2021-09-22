@@ -13,7 +13,6 @@ import SwiftUI
 class SearchListViewModel: ObservableObject {
     
     @Published var users: [User] = []
-//    @Published var savedUsers:[SavedUser] = []
     @Published var repos: [Repos] = []
     @Published var searchQuery = ""
     @Published var isLoading = false
@@ -29,12 +28,7 @@ class SearchListViewModel: ObservableObject {
     var selectedUser: User? {
         didSet{ isShowingDetailView = true }
     }
-    @FetchRequest(
-       entity: SavedUser.entity(),
-       sortDescriptors: [
-         NSSortDescriptor(keyPath: \SavedUser.id, ascending: true)
-       ]
-     ) var savedUsers: FetchedResults<SavedUser>
+
     
     init() {
        delayAndPass()
@@ -93,6 +87,16 @@ extension SearchListViewModel {
                 
             })
     }
+    func navBarText() -> String {
+        if !searchQuery.isEmpty && !showFavourite{
+            return "Found \(totalCount) results"
+        }else if showFavourite{
+            return "⭐️ Favourite Users"
+        }else{
+            return "💻 GitHub User Search"
+        }
+    }
 
+   
 
 }

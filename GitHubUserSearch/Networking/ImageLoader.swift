@@ -9,6 +9,7 @@ import Combine
 import UIKit
 
 class ImageLoader: ObservableObject {
+    
     @Published var image: UIImage?
     
     private(set) var isLoading = false
