@@ -36,7 +36,13 @@ struct FavouriteCell: View {
                     .lineLimit(nil)
                     .textSelection(.enabled)
             }
-            
+           
+            Link(destination: URL(string: savedUser.htmlURL!)!) {
+                Image(systemName: "chevron.right")
+                    .foregroundColor(.primary)
+            }
+            .frame(width: 20, height: 20)
+            .padding(.leading)
         }
     }
     

@@ -126,7 +126,7 @@ struct SearchListView: View {
                 LoadingView()
             }else if viewModel.errorMessage != "" {
                 ErrorView(message: viewModel.errorMessage)
-            }else if viewModel.users.count > 0 {
+            }else if viewModel.users.count > 0 || viewModel.showFavourite{
                 chosenList()
             }else if viewModel.searchQuery == "" {
                 ErrorView(message: "Try searching for Github users, using search bar. 🔎")

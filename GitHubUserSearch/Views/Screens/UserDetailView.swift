@@ -55,7 +55,7 @@ struct UserDetailView: View {
                     isShowingDetailView.toggle()
                 }label: {
                     XButton(frameXY: 44)
-            }
+                }
             }
           
             Spacer()
