@@ -21,4 +21,4 @@
 //
 //
 //}
-//this test will fail due to UUID() used as user ID 
+//this test will fail due to UUID() used as user ID being always different
